@@ -3,7 +3,7 @@ import { Header } from './components/Header';
 import { TodoInput } from './components/TodoInput';
 import { TodoList } from './components/TodoList';
 import { TodoFilter } from './components/TodoFilter';
-import { useTodos } from './hooks/useTodos';
+import { useSupabaseTodos } from './hooks/useSupabaseTodos';
 import './App.css';
 
 const App: React.FC = () => {
@@ -11,13 +11,27 @@ const App: React.FC = () => {
     todos,
     filter,
     stats,
+    isLoading,
     addTodo,
     updateTodo,
     deleteTodo,
     toggleTodo,
     clearCompleted,
     setFilter,
-  } = useTodos();
+  } = useSupabaseTodos();
+
+  if (isLoading) {
+    return (
+      <div className="app">
+        <div className="container">
+          <Header />
+          <div className="loading">
+            <p>로딩 중...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="app">

@@ -5,9 +5,9 @@ import '../styles/TodoList.css';
 
 interface TodoListProps {
   todos: Todo[];
-  onToggle: (id: string) => void;
-  onDelete: (id: string) => void;
-  onUpdate: (id: string, text: string) => boolean;
+  onToggle: (id: string) => Promise<void>;
+  onDelete: (id: string) => Promise<void>;
+  onUpdate: (id: string, text: string) => Promise<boolean>;
 }
 
 export const TodoList: React.FC<TodoListProps> = ({

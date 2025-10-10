@@ -28,6 +28,17 @@
   }
 }
 
+.loading {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+.loading p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
 /* 반응형 디자인 */
 @media (max-width: 768px) {
   .app {
@@ -36,6 +47,10 @@
 
   .container {
     border-radius: 12px;
+  }
+
+  .loading {
+    padding: 2rem 1rem;
   }
 }
 

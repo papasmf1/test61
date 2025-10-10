@@ -5,9 +5,9 @@ import '../styles/TodoItem.css';
 
 interface TodoItemProps {
   todo: Todo;
-  onToggle: (id: string) => void;
-  onDelete: (id: string) => void;
-  onUpdate: (id: string, text: string) => boolean;
+  onToggle: (id: string) => Promise<void>;
+  onDelete: (id: string) => Promise<void>;
+  onUpdate: (id: string, text: string) => Promise<boolean>;
 }
 
 export const TodoItem: React.FC<TodoItemProps> = ({
@@ -18,6 +18,7 @@ export const TodoItem: React.FC<TodoItemProps> = ({
 }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editText, setEditText] = useState(todo.text);
+  const [isUpdating, setIsUpdating] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -32,9 +33,11 @@ export const TodoItem: React.FC<TodoItemProps> = ({
     setEditText(todo.text);
   };
 
-  const handleSave = () => {
-    if (editText.trim()) {
-      const success = onUpdate(todo.id, editText);
+  const handleSave = async () => {
+    if (editText.trim() && !isUpdating) {
+      setIsUpdating(true);
+      const success = await onUpdate(todo.id, editText);
+      setIsUpdating(false);
       if (success) {
         setIsEditing(false);
       }

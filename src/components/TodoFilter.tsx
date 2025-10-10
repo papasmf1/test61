@@ -10,7 +10,7 @@ interface TodoFilterProps {
     active: number;
     completed: number;
   };
-  onClearCompleted: () => void;
+  onClearCompleted: () => Promise<void>;
 }
 
 export const TodoFilter: React.FC<TodoFilterProps> = ({
