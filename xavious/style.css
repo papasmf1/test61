@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    text-align: center;
+}
+
+.game-header {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game-header h1 {
+    font-size: 32px;
+    letter-spacing: 3px;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+.game-info {
+    display: flex;
+    gap: 30px;
+    font-size: 18px;
+}
+
+.score, .lives {
+    font-weight: bold;
+}
+
+.score span, .lives span {
+    color: #ffd700;
+}
+
+#gameCanvas {
+    border: 3px solid #00ff00;
+    background: #000;
+    display: block;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+.game-controls {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+}
+
+.instructions {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.95);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    border: 3px solid #ff0000;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+}
+
+.game-over h2 {
+    font-size: 36px;
+    color: #ff0000;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ff0000;
+}
+
+.game-over p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.game-over button {
+    background: #00ff00;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.game-over button:hover {
+    background: #00cc00;
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
