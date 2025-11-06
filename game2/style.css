@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #87CEEB 0%, #98D8E8 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.ui {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.score, .lives {
+    padding: 5px 15px;
+    background: #f0f0f0;
+    border-radius: 5px;
+}
+
+#gameCanvas {
+    display: block;
+    border: 3px solid #333;
+    background: linear-gradient(to bottom, #87CEEB 0%, #87CEEB 70%, #90EE90 70%, #90EE90 100%);
+    border-radius: 5px;
+}
+
+.controls {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.controls button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.controls button:hover {
+    background: #45a049;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.game-over.hidden {
+    display: none;
+}
+
+.game-over h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.game-over p {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.game-over button {
+    padding: 12px 24px;
+    font-size: 16px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.game-over button:hover {
+    background: #45a049;
+}
+
